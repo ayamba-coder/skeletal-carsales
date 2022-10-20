@@ -13,11 +13,11 @@
             <h3 class="title">Checkout</h3>
             @foreach ($cart->products as $product)
             <div class="item">
-                <span class="price">{{$product->pivot->total}} </span>
-                <p class="item-name">{{$product->name}}</p>
+                <span class="price">${{$product->pivot->total}} </span>
+                <p class="item-name">${{$product->name}}</p>
             </div>
             @endforeach
-            <div class="total">Total<span class="price">{{$cart->products()->sum('prices')}}</span></div>
+            <div class="total">Total<span class="price">${{$cart->products->sum('pivot.total')}}</span></div>
           </div>
           <div class="card-details">
             <h3 class="title">Credit Card Details</h3>

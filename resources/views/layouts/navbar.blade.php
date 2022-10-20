@@ -17,9 +17,6 @@
             <a class="nav-link active text-white" aria-current="page" href={{route('homepage')}}><i class="fa fa-home"></i> Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="{{route('aboutpage')}}"><i class="fa fa-info-circle"></i> About</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link text-white" href={{route('contactpage')}}><i class="fa fa-phone-square"></i> Contact Us</a>
           </li>
           @auth
@@ -28,7 +25,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link text-white" href={{route('user.dashboard.cart')}} style="padding: 0.7vh">
-              <span class="fa-stack fa-1x has-badge" data-count='2'>
+              <span class="fa-stack fa-1x has-badge" data-count={{ get_cart_count() }}>
                 <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
               </span>Cart
             </a>

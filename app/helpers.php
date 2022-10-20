@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Cart;
+
 function has_Internet()
 {
     $connected = @fsockopen("www.example.com", 80); 
@@ -12,5 +14,9 @@ function has_Internet()
     }
     return $is_conn;
 
+}
+
+function get_cart_count(){
+    return auth()->user()->cart->products()->count();
 }
 ?>

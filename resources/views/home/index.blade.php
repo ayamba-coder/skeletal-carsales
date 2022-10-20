@@ -18,7 +18,7 @@
             </div>
            </div>
     </section>
-    <div class="container bg-dark ">
+    <div class="bg-dark">
       <h1 class="display-6 fw-bold text-white text-center">Why Choose Us</h1>
       <div class="row justify-content-center align-items-center g-2">
         <div class="col-sm-4">

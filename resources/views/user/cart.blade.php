@@ -20,11 +20,11 @@
                             <div class="col-4" style="bold">{{$product->name}} <br />Color:blue</div>
                         </div>
                     </div>
-                    <div class="col-2 text-center">Each <p>{{$product->prices}}</p> </div>
+                    <div class="col-2 text-center">Each <p>${{$product->prices}}</p> </div>
                     <div class="col-1 text-center">Quantity <br/><input type="text" value="{{$product->pivot->quantity}}" style="width:100%" name="quantity"></div>
                     <input name='id' value={{$product->id}} hidden>
                     <div class="col-2 text-center">
-                        Total <p>{{$product->pivot->total}}</p>
+                        Total <p>${{$product->pivot->total}}</p>
                     </div>
                     <div class="col-1 text-center">
                         <br/><button href={{route('user.dashboard.cart.update',['id'=>$product->id])}} class="btn btn-primary" type="submit">Update</button>
@@ -38,15 +38,15 @@
                 @endforeach
             </div>
             <div class="col-4 text-center   ">
-                   <p>Shipping Cost:</p>
-                   <p>Discount: </p>
-                   <p>Estimated Cost: </p>
+                   <p>Shipping Cost: nil</p>
+                   <p>Discount: nil </p>
+                   <p>Estimated Cost: ${{$cart->products->sum('pivot.total')}} </p>
                    <a href={{route('user.checkout',['id'=>$cart->id])}} class="btn btn-info">Checkout</a>
             </div>
         </div>
         <div class="row justify-content-center align-items-center g-2">
-            <div class="col">5 items</div>
-            <div class="col">Total: ${{$cart->products->sum('prices')}}</div>
+            <div class="col">{{ get_cart_count() }} item(s)</div>
+            <div class="col">Total: ${{$cart->products->sum('pivot.total')}}</div>
         </div>
         @else
         <div class="text-center py-2 mt-4">

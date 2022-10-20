@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
-use App\Http\Controllers\User\DashboardController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 
